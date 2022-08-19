@@ -1,0 +1,38 @@
+.figuraContainer{
+    width: 40vw;
+    height: 40vw;
+    background-color: red;
+    position: relative;
+}
+
+.figuraContainer img{
+    position: absolute;
+    top: -20%;
+    left: -30%;    
+    max-width: 100%;
+    object-fit: cover;
+
+    transform: rotate(0deg);
+    filter: none;
+
+    animation-name: prueba;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.9, 0.0, 0.1, 1.000);;
+}
+
+@keyframes prueba {
+    from{
+        transform: rotate(0deg);
+        filter: invert(53%) sepia(92%) saturate(485%) hue-rotate(156deg) brightness(80%) contrast(82%);
+    }
+
+    to{
+        transform: rotate(180deg);
+        filter: invert(65%) sepia(43%) saturate(691%) hue-rotate(14deg) brightness(92%) contrast(91%);
+    }
+
+}
+
