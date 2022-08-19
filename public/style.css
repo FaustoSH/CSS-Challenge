@@ -101,3 +101,48 @@
     bottom: 0;
     right: 20%;
 }
+
+
+.tituloContainer{
+    z-index: 200;
+    width: 20vw;
+    height: 20vh;
+    white-space: nowrap;
+    text-overflow: clip;
+    overflow: hidden;
+    background-color: transparent;
+    position: absolute;
+    top: 15vh;
+    left: 3vw;
+}
+
+
+.titulo{
+    font-size: 80px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:white;
+    text-align: left;
+}
+
+.titulo::before{
+    content:" Título 1 Título 2";
+    position: absolute;
+    left: 0;
+    animation-name: cambioTitulo;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.9, 0.0, 0.1, 1.000);
+}
+
+@keyframes cambioTitulo {
+    from{
+        left: 0;
+    }
+    to{
+        left: -100%;
+    }
+}
+
