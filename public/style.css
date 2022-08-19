@@ -1,38 +1,103 @@
 .figuraContainer{
-    width: 40vw;
-    height: 40vw;
-    background-color: red;
+    width: 60vw;
+    height: 60vw;
+    background-color: transparent;
     position: relative;
-}
+    bottom: 40vh;
+    left: -25vw;
 
-.figuraContainer img{
-    position: absolute;
-    top: -20%;
-    left: -30%;    
-    max-width: 100%;
-    object-fit: cover;
 
-    transform: rotate(0deg);
-    filter: none;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    animation-name: prueba;
+    transform: rotate(0);
+    animation-name: rotacion;
     animation-duration: 5s;
     animation-fill-mode: forwards;
     animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0.9, 0.0, 0.1, 1.000);;
+    animation-timing-function: cubic-bezier(0.9, 0.0, 0.1, 1.000);
 }
 
-@keyframes prueba {
+@keyframes rotacion{
     from{
         transform: rotate(0deg);
-        filter: invert(53%) sepia(92%) saturate(485%) hue-rotate(156deg) brightness(80%) contrast(82%);
     }
 
     to{
         transform: rotate(180deg);
+    }
+}
+
+
+
+.figuraContainer img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.figuraContainer #figuraPrincipal{
+    filter: none;
+    animation-name: cambioColor;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.9, 0.0, 0.1, 1.000);
+}
+
+@keyframes cambioColor {
+    from{
+        filter: invert(53%) sepia(92%) saturate(485%) hue-rotate(156deg) brightness(80%) contrast(82%);
+    }
+
+    to{
         filter: invert(65%) sepia(43%) saturate(691%) hue-rotate(14deg) brightness(92%) contrast(91%);
     }
 
 }
 
+
+.figuraPequeñaContainer{
+    width: 10vw;
+    height: 10vw;
+    background-color: transparent;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figuraPequeñaContainer img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+#manzana, #arbol{
+    transform: rotate(180deg);
+}
+
+
+#manzana{
+    top: 0;
+    left: 20%;
+}
+
+#arbol{
+    bottom: 40%;
+    left: 0;
+}
+
+#sillon{
+    bottom: 40%;
+    
+    right: 0;
+}
+
+#nube{
+    bottom: 0;
+    right: 20%;
+}
